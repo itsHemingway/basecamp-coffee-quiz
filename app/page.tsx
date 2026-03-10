@@ -93,8 +93,8 @@ const questions: {
     text: "Pick a travel destination:",
     options: [
       {
-        emoji: "🌋",
-        text: "Iceland — lava fields and hot springs",
+        emoji: "🏔️",
+        text: "High adventure — hiking up a snow peaked mountain",
         personality: "bold",
       },
       {
@@ -193,12 +193,24 @@ const questions: {
 
 type AppState = "intro" | "quiz" | "result";
 
+function shuffleOptions<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 export default function Home() {
   const [appState, setAppState] = useState<AppState>("intro");
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Personality[]>([]);
   const [selectedOption, setSelectedOption] = useState<Personality | null>(null);
   const [result, setResult] = useState<Personality | null>(null);
+  const [shuffledQuestions] = useState(() =>
+    questions.map((q) => ({ ...q, options: shuffleOptions(q.options) }))
+  );
 
   function handleStart() {
     setAppState("quiz");
@@ -304,11 +316,11 @@ export default function Home() {
               className="text-2xl font-bold mb-6 leading-snug"
               style={{ fontFamily: "var(--font-playfair)", color: "#3D2B1F" }}
             >
-              {questions[currentQuestion].text}
+              {shuffledQuestions[currentQuestion].text}
             </h2>
 
             <div className="flex flex-col gap-3">
-              {questions[currentQuestion].options.map((option) => {
+              {shuffledQuestions[currentQuestion].options.map((option) => {
                 const isSelected = selectedOption === option.personality;
                 return (
                   <button
