@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 3 - Bold & Dramatic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 52px;
+      max-width: 560px;
+      width: 100%;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .step {
+      font-size: 12px;
+      font-weight: 500;
+      color: #C8A97E;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .progress-dots { display: flex; gap: 6px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #333; }
+    .dot.active { background: #C8A97E; }
+    .dot.done { background: #555; }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      color: #ffffff;
+      margin-bottom: 36px;
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option {
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #888;
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .option:hover { border-color: #C8A97E; color: #fff; background: #1a1a1a; }
+    .option.selected { border-color: #C8A97E; color: #C8A97E; background: #1a1508; }
+    .marker { width: 6px; height: 6px; border-radius: 50%; background: #C8A97E; flex-shrink: 0; opacity: 0; }
+    .option.selected .marker { opacity: 1; }
+    .label { font-size: 11px; color: #444; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 3 — Bold & Dramatic</div>
+    <div class="top">
+      <div class="step">Question 3 / 5</div>
+      <div class="progress-dots">
+        <div class="dot done"></div>
+        <div class="dot done"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </div>
+    <h1>Your ideal Sunday morning looks like...</h1>
+    <div class="options">
+      <div class="option selected"><div class="marker"></div> Hiking a new trail before anyone else wakes up</div>
+      <div class="option"><div class="marker"></div> Coffee in bed with a good book, no rush</div>
+      <div class="option"><div class="marker"></div> Quiet meditation and a slow, intentional breakfast</div>
+      <div class="option"><div class="marker"></div> Brunch with friends and way too many pastries</div>
+    </div>
+  </div>
+</body>
+</html>

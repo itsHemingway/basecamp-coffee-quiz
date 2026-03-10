@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 4 - Warm & Cozy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(160deg, #F5ECD7 0%, #EDD9B8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #FFFDF8;
+      border-radius: 20px;
+      padding: 52px;
+      max-width: 560px;
+      width: 100%;
+      box-shadow: 0 8px 40px rgba(139, 90, 43, 0.12);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .step {
+      font-size: 13px;
+      font-weight: 400;
+      color: #B07D4A;
+      letter-spacing: 0.5px;
+    }
+    .progress {
+      display: flex;
+      gap: 6px;
+    }
+    .bar { width: 28px; height: 4px; border-radius: 2px; background: #EDD9B8; }
+    .bar.done { background: #B07D4A; }
+    .bar.active { background: #D4956A; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #3D2B1F;
+      margin-bottom: 36px;
+      line-height: 1.4;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .option {
+      border: 1.5px solid #E8D5B7;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 400;
+      color: #6B4C35;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: white;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .option:hover { border-color: #B07D4A; background: #FDF6EC; }
+    .option.selected { border-color: #B07D4A; background: #FDF0DC; color: #3D2B1F; font-weight: 700; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #D4956A; flex-shrink: 0; }
+    .option.selected .dot { background: #B07D4A; border-color: #B07D4A; }
+    .label { font-size: 11px; color: #C4A882; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 4 — Warm & Cozy</div>
+    <div class="header">
+      <div class="step">Question 3 of 5</div>
+      <div class="progress">
+        <div class="bar done"></div>
+        <div class="bar done"></div>
+        <div class="bar active"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    <h1>Your ideal Sunday morning looks like...</h1>
+    <div class="options">
+      <div class="option selected"><div class="dot"></div> Hiking a new trail before anyone else wakes up</div>
+      <div class="option"><div class="dot"></div> Coffee in bed with a good book, no rush</div>
+      <div class="option"><div class="dot"></div> Quiet meditation and a slow, intentional breakfast</div>
+      <div class="option"><div class="dot"></div> Brunch with friends and way too many pastries</div>
+    </div>
+  </div>
+</body>
+</html>

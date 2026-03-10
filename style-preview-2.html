@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 2 - Minimal & Clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 4px;
+      padding: 56px;
+      max-width: 560px;
+      width: 100%;
+      border: 1px solid #e8e8e8;
+    }
+    .progress-bar {
+      height: 2px;
+      background: #f0f0f0;
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 60%;
+      background: #1a1a1a;
+      border-radius: 2px;
+    }
+    .step {
+      font-size: 11px;
+      font-weight: 500;
+      color: #999;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #1a1a1a;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .option {
+      padding: 18px 0;
+      font-size: 15px;
+      font-weight: 400;
+      color: #555;
+      cursor: pointer;
+      border-bottom: 1px solid #f0f0f0;
+      transition: all 0.1s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .option:last-child { border-bottom: none; }
+    .option:hover { color: #1a1a1a; }
+    .option.selected { color: #1a1a1a; font-weight: 500; }
+    .option.selected::after { content: "✓"; font-size: 14px; }
+    .label { font-size: 11px; color: #bbb; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Style 2 — Minimal & Clean</div>
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+    <div class="step">Question 3 of 5</div>
+    <h1>Your ideal Sunday morning looks like...</h1>
+    <div class="options">
+      <div class="option selected">Hiking a new trail before anyone else wakes up</div>
+      <div class="option">Coffee in bed with a good book, no rush</div>
+      <div class="option">Quiet meditation and a slow, intentional breakfast</div>
+      <div class="option">Brunch with friends and way too many pastries</div>
+    </div>
+  </div>
+</body>
+</html>
